@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Web-Contact</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <nav>
+      <ul>
+        <li><a href="http://localhost:3000/"> Homepage</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>Festival</li>
+        <li>
+          <pre>
+                                                       Seongwon Seo     119078194    sseo14@myseneca.ca</pre
+          >
+        </li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Kpop Mania</h1>
+    </header>
+    <br /><br /><br />
+    <div>
+      <h5>Contact Us</h5>
+      <br />
+      <form action="https://httpbin.org/post" method="post">
+        <h4>Please fill out all the inquiries.</h4>
+        <p>
+          <input type="radio" name="answer" />
+          <label for="answer">Issue</label><br />
+          <input type="radio" name="answer" />
+          <label for="answer">Question</label><br />
+          <input type="radio" name="answer" />
+          <label for="answer">Delivery</label><br />
+        </p>
+        <p class="question_1">
+          <input
+            pattern="[a-zA-Z]{1,}"
+            type="text;"
+            id="first-Name"
+            name="filed-1"
+            placeholder="First Name"
+            required="required"
+          /><br />
+          <input
+            type="text"
+            pattern="[a-zA-Z]{1,}"
+            name="field-2"
+            placeholder="Last Name"
+            required="required"
+          />
+          <br />
+          <input
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            name="field-3"
+            placeholder="Phone Number with hyphen"
+            required="required"
+          /><br />
+          <input
+            id="primary-address"
+            name="filed-4"
+            type="address"
+            placeholder="Address"
+            required="required"
+          />
+          <br />
+          <input
+            id="address"
+            name="filed-4"
+            type="address"
+            placeholder="City Address"
+            required="required"
+          />
+        </p>
+        <input
+          id="postal"
+          name="filed-4"
+          type="postalcode"
+          pattern="[A-Za-z][0-9][A-Za-z]+\s?[0-9][A-Za-z][0-9]"
+          placeholder="Postal Code"
+          required="required"
+        />
+        <br />
+        <input type="text" id="myname" name="custId" value="Seongwon" hidden />
+        <br />
+        <p class="question_2"></p>
+        <p>How can we help you?</p>
+        <textarea
+          name="comments-01"
+          id="comments"
+          cols="60"
+          rows="10"
+          required="required"
+        ></textarea>
+        <br />
+        <input type="submit" name="submitform" value="Submit-application" />&nbsp;&nbsp;&nbsp;
+        <input type="reset" name="reset-button" value="Clear" />
+      </form>
+    </div>
+    <div id="question"></div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <section>
+      <div>
+        <h2>Policy</h2>
+        <h2>정책사항</h2>
+        <p>
+          We gurantee that we sell Kpop concert ticket at a cheapest price for you.
+          <br />
+          저희는 캐나다에서 가장 저렴하게 티켓을 여러분께 판매하기 할것을 약속드립니다.
+        </p>
+        <p>
+          If you find the cheaper ticket, we promise you that we will fully refund your money.<br />
+          저희보다 저렴하게 판매하는곳을 발견하시면 전액 환불을 약속드립니다.
+        </p>
+        <p>
+          Please send us email with the screenshot and the method you used for the purchase in that
+          case <br />이 같은 경우에는 저희에게 스크린샷과 구매하셨던 기록을 저희에게 이메일로
+          보내주세요.
+        </p>
+      </div>
+    </section>
+    <br /><br /><br />
+    <div class="grid">
+      <div>
+        contact
+        <p>647-000-0000</p>
+      </div>
+      <div>
+        Email
+        <p>
+          kpopkpop@kpop.com
+        </p>
+      </div>
+      <div>
+        Address
+        <p>Finch Ave 000 Toronto</p>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br /><br />
+
+    <footer>
+      <h3>Subscribe &nbsp; &nbsp; NewsLetter &nbsp; &nbsp; Help &nbsp; &nbsp; Instagram &nbsp;</h3>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+<!--    
+
+    Part 2: Contact Us Page
+
+    Requirements:
+
+    1. Use the same header/footer, colours, fonts, etc. as your index.html page.
+    It should be obvious to the user they they are still on the same site, and that
+    contact.html is part of your store.
+
+    2. Include an HTML Form for the user to fill out his or her information along
+    with their message to you. Your form should including the following, and all
+    fields should be mandatory unless otherwise noted, and use the most appropriate <input> type:
+    
+        - First Name
+        - Last Name
+        - Email Address
+        - Address
+        - City (use a <datalist> for autocomplete of common Canadian cities)
+        - Phone Number (must be a valid Canadian Phone Number, use regex)
+        - Postal Code (must be a valid Canadian Postal Code, use regex)
+        - Checkbox Option to be phoned ("Would you like to be phoned?")
+        - Radio Options to specify what this is about: one of "Question",
+          "Comment", or "Order Problem". If the user selects "Order Problem",
+          dynamically reveal another input box to enter the order number. In the
+          case of "Comment" or "Question" hide this input box.
+        - A large area to enter the message that they want to send
+        - A hidden input field with your name
+
+    3. The form should submit to https://httpbin.org/post using the POST method,
+    and only allow the user to submit when all data has been entered and there
+    aren't any validation errors.  The data posted to httpbin.org should include
+    all data defined in the form above (e.g., visible and hidden fields).
+
+  -->
